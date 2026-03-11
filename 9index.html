@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dagmara ❤️ Natalia</title>
+<style>
+/* PODSTAWOWY STYL */
+body,html{
+  margin:0;
+  padding:0;
+  font-family:Arial,sans-serif;
+  background:rgb(90,0,0);
+  color:white;
+  overflow-y:auto;
+}
+.section{
+  width:100%;
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  padding:20px;
+  box-sizing:border-box;
+}
+.title{
+  font-size:18px;
+  opacity:0.9;
+  letter-spacing:2px;
+  margin-bottom:15px;
+}
+button,input{
+  padding:10px;
+  border-radius:10px;
+  border:none;
+  margin:6px;
+  font-size:16px;
+  cursor:pointer;
+}
+.gallery{
+  width:90%;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+}
+.gallery div{
+  margin:10px 0;
+  width:100%;
+}
+.gallery img{
+  width:100%;
+  max-width:500px;
+  border-radius:12px;
+}
+.caption{
+  font-size:12px;
+  opacity:0.8;
+  margin-top:5px;
+  background:rgba(0,0,0,0.5);
+  padding:4px 6px;
+  border-radius:6px;
+}
+.timeline{
+  max-width:500px;
+  text-align:left;
+}
+.timeline div{
+  border-left:2px solid white;
+  padding-left:10px;
+  margin:15px 0;
+}
+.marzenia label{
+  display:block;
+  margin:8px 0;
+  cursor:pointer;
+  padding:6px;
+  background:rgba(0,0,0,0.5);
+  border-radius:6px;
+}
+.coupon {
+  border: 2px dashed white;
+  padding: 15px;
+  border-radius: 12px;
+  margin: 10px;
+  cursor: pointer;
+  width: 80%;
+  max-width: 300px;
+  background: rgba(0,0,0,0.7); /* półprzezroczyste ciemne tło */
+  color: white;
+  display: block;
+  position: relative;
+  z-index: 1; /* upewnia że kupon jest klikany */
+}
+
+.coupon .uses {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  font-size: 12px;
+  color: yellow;
+  pointer-events: none; /* pozwala kliknąć kupon mimo że span jest nad nim */
+}
+.coupon span.count{
+  position:absolute;
+  right:10px;
+  bottom:5px;
+  font-size:12px;
+  opacity:0.8;
+}
+.quiz button{
+  display:block;
+  margin:6px 0;
+  padding:10px;
+  border:none;
+  border-radius:10px;
+  cursor:pointer;
+  width:220px;
+}
+.correct{background:green;color:white;}
+.wrong{background:red;color:white;}
+.reason{
+  margin:5px 0;
+  padding:8px;
+  background:rgba(0,0,0,0.5);
+  border-radius:6px;
+  max-width:500px;
+}
+.message{
+  padding:12px;
+  background:rgba(0,0,0,0.5);
+  border-radius:8px;
+  max-width:600px;
+  margin:5px 0;
+}
+</style>
+</head>
+<body>
+
+<!-- HASŁO -->
+<div id="lock" style="position:fixed;top:0;left:0;width:100%;height:100%;background:rgb(90,0,0);display:flex;flex-direction:column;justify-content:center;align-items:center;z-index:1000;">
+  <div class="title">tylko dla ciebie kabiuszku</div>
+  <h2>Dagmara ❤️ Natalia</h2>
+  <p>ta strona jest tylko dla ciebie</p>
+  <input id="password" placeholder="wpisz hasło">
+  <button onclick="unlock()">Otwórz</button>
+</div>
+
+<!-- SEKCJE -->
+
+<div class="section" id="section0">
+  <div class="title">wiadomosc dla ciebie</div>
+  <div class="message">
+  kabiuszku,<br><br>
+  moim najwiekszym marzeniem jest zamieszkanie z tobą, posiadanie calego zoo ktore bedziesz chciala i zestarzenie sie u twego boku. 
+  Chce zebys codziennie pamietala ze cie bardzo kocham i jestes moja pierwsza mysla po przebudzeniu i ostatnia przed snem (nie no spoko w snach tez mnie nawiedzasz). 
+  wiedz ze bez wzgledu na wszystko masz we mnie wsparcie, pomimo tego ze czasem sie nie rozumiemy to i tak zawsze bede przy tobie, zawsze mozesz na mnie liczyc i zawsze bede tu dla ciebie kalpiku ty moj ❤️
+  </div>
+</div>
+
+<div class="section" id="section1">
+  <div class="title">nasza historia</div>
+  <h2>Jestesmy razem od</h2>
+  <h1 id="counter"></h1>
+  <div class="timeline">
+    <div><b>26.09.2023</b> — <i>pierwsze spotkanie</i><br><small>Pierwszy raz rozmawialysmy w kiblu szkolnym</small></div>
+    <div><b>06.12.2023</b> — <i>wejscie w zwiazek</i><br><small>zapytalam cie czy jestesmy razem</small></div>
+    <div><b>27.12.2023</b> — <i>pierwsze kwiaty ode mnie</i><br><small>jechalam do ciebie zobaczylam kwiaciarnie i weszlam bo pomyslalam o tobie</small></div>
+    <div><b>01.01.2024</b> — <i>pierwszy wspolny sylwester</i><br><small>najebalysmy sie, zezgonowalysmy, jak prawdziwi polacy czyli sylwester udany</small></div>
+    <div><b>19.01.2024</b> — <i>oswiadczylam ci sie i powiedzialas tak</i><br><small>wiem ze to nie byl jakis super mega wow pierscionek ale byl</small></div>
+    <div><b>02.05.2024</b> — <i>moje pierwsze urodzinki z toba</i><br><small>kocham twoj tostowy tort</small></div>
+    <div><b>21.06.2024</b> — <i>pierwsze wspolne wakacje</i><br><small>to byly najlepsze wakacje w zyciu bo wspolne</small></div>
+    <div><b>09.07.2024</b> — <i>pierwsze twoje urodzinki ze mna</i><br><small>mialysmy nocke, zrobilam ci boxa i smialysmy sie razem z rzeczy ktore byly w srodku</small></div>
+    <div><b>06.12.2024</b> — <i>wspolny pierwszy rok</i><br><small>rok dokuczania bicia i milosci</small></div>
+  </div>
+</div>
+
+<div class="section" id="section2">
+  <div class="title">nasze piosenki</div>
+  <!-- Druga piosenka -->
+  <iframe style="border-radius:12px; margin-bottom:15px;" 
+          src="https://open.spotify.com/embed/track/2ga4Pc9QNm2FX0MkoYnhdQ?si=5q1HSurXSkmbqV2eu8pFng" 
+          width="300" height="80" 
+          allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture">
+  </iframe>
+  <!-- Pierwsza piosenka -->
+  <iframe style="border-radius:12px;" 
+          src="https://open.spotify.com/embed/track/5k38wzpLb15YgncyWdTZE4?si=UBWhn_vaTaSbTColwvdQBg" 
+          width="300" height="80" 
+          allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture">
+  </iframe>
+</div>
+
+
+<div class="section" id="section3">
+  <div class="title">powody dlaczego cie kocham</div>
+  <div class="reason">kocham cie bo przy tobie czuje spokoj i bezpieczenstwo</div>
+  <div class="reason">kocham cie bo jestes moim domem</div>
+  <div class="reason">kocham cie bo jestes wyjatkowa (kazda twoja osobowosc tez)</div>
+  <div class="reason">kocham cie bo przy tobie czas sie zatrzymuje a moje serce bije mocniej</div>
+  <div class="reason">kocham cie bo szczerze sie przy tobie jak glupek nawet w te ponure dni</div>
+  <div class="reason">kocham cie bo jestes najpiekniejsza kobieta jaka znam i kiedykolwiek poznam, nie tylko zewnetrznie ale i wewnetrznie</div>
+  <div class="reason">kocham cie bo mamy nasz czarny humor ktory jest zajebisty</div>
+  <div class="reason">kocham cie bo czasem potrafimy porozumiewac sie bez slow, samymi spojrzeniami</div>
+  <div class="reason">kocham cie bo przy tobie nie musze udawac siebie</div>
+  <div class="reason">kocham cie i chce spedzic z toba reszte zycia, pomimo mlodego wieku pragne widywac cie codziennie i zamienic nasze do zobaczenia jutro na widzimy sie w domu</div>
+</div>
+
+<div class="section" id="section4">
+  <div class="title">galeria milosci</div>
+  <div class="gallery">
+    <div><img src="1.jpg"><div class="caption">wspolne chodzenie siku bo czemu by nie</div></div>
+    <div><img src="2.jpg"><div class="caption">pierwszy wspolny sylwester</div></div>
+    <div><img src="3.jpg"><div class="caption">nocka u ludwickiej i skin care</div></div>
+    <div><img src="4.jpg"><div class="caption">odebralas mnie z galerii</div></div>
+    <div><img src="5.jpg"><div class="caption">te lizaki byly cudowne</div></div>
+    <div><img src="6.jpg"><div class="caption">wspolne wartowanie</div></div>
+    <div><img src="7.jpg"><div class="caption">robilysmy ognisko na grillu na dzialce</div></div>
+    <div><img src="8.jpg"><div class="caption">mialysmy glupawke w galerii</div></div>
+    <div><img src="9.jpg"><div class="caption">wspolny sylwek z ruda</div></div>
+    <div><img src="10.jpg"><div class="caption">pierwsze pojscie razem na lyzwy</div></div>
+    <div><img src="11.jpg"><div class="caption">zabralam cie na farme dyn zeby zrobic z nich minki</div></div>
+    <div><img src="12.jpg"><div class="caption">pojechalysmy do wwa</div></div>
+    <div><img src="13.jpg"><div class="caption">wspolne pojscie na silownie</div></div>
+  </div>
+</div>
+
+<div class="section" id="section5">
+  <div class="title">lista marzen</div>
+  <div class="marzenia">
+    <label><input type="checkbox"> miec w domu zoo</label>
+    <label><input type="checkbox"> podrozowac wspolnie</label>
+    <label><input type="checkbox"> pojechac razem na wakacje gdzies dalej niz dzialka</label>
+  </div>
+</div>
+
+<div class="section" id="section6">
+  <div class="title">kalpikowe kupony milosci</div>
+  <div class="coupon" data-usage="1">kupon na dobry masaz <span class="count">pozostalo: 1</span></div>
+  <div class="coupon" data-usage="999">kupon na caluski <span class="count">pozostalo: ∞</span></div>
+  <div class="coupon" data-usage="999">kupon na przytulaski <span class="count">pozostalo: ∞</span></div>
+  <div class="coupon" data-usage="3">kupon na wspolna drzemke <span class="count">pozostalo: 3</span></div>
+  <div class="coupon" data-usage="5">kupon na wspolna nauke kpopu <span class="count">pozostalo: 5</span></div>
+  <div class="coupon" data-usage="1">kupon na dowolna czynnosc jaka chcesz <span class="count">pozostalo: 1</span></div>
+  <div class="coupon" data-usage="5">kupon na czas bez elektroniki <span class="count">pozostalo: 5</span></div>
+  <div class="coupon" data-usage="2">kupon na odobrazenie sie <span class="count">pozostalo: 2</span></div>
+  <div class="coupon" data-usage="3">kupon na przyznanie ci racji <span class="count">pozostalo: 3</span></div>
+  <div class="coupon" data-usage="4">kupon na pogodzenie sie <span class="count">pozostalo: 4</span></div>
+  <div class="coupon" data-usage="10">kupon na dobre jedzonko <span class="count">pozostalo: 10</span></div>
+  <div class="coupon" data-usage="3">kupon na pryszczing <span class="count">pozostalo: 3</span></div>
+  <div class="coupon" data-usage="3">kupon na drapanie <span class="count">pozostalo: 3</span></div>
+</div>
+
+<div class="section" id="section7">
+  <div class="title">maly quiz o mnie</div>
+  <div class="quiz">
+    <p>1. moja comfort person</p>
+    <button onclick="checkAnswer(this,'c')">a) klaudia 💀</button>
+    <button onclick="checkAnswer(this,'c')">b) nastka</button>
+    <button onclick="checkAnswer(this,'c')">c) kabiuszek ❤️</button>
+    <button onclick="checkAnswer(this,'c')">d) marta</button>
+
+    <p>2. moje ulubione kolory</p>
+    <button onclick="checkAnswer(this,'b')">a) czerwony, zielony, bialy</button>
+    <button onclick="checkAnswer(this,'b')">b) zielony, niebieski, czarny</button>
+    <button onclick="checkAnswer(this,'b')">c) fioletowy, rozowy, bezowy</button>
+    <button onclick="checkAnswer(this,'b')">d) zielony, niebieski, bialy</button>
+
+    <p>3. pierwszy piesek jakiego chce miec na wlasnym mieszkaniu</p>
+    <button onclick="checkAnswer(this,'d')">a) corgi</button>
+    <button onclick="checkAnswer(this,'d')">b) doberman</button>
+    <button onclick="checkAnswer(this,'d')">c) czijaja XD</button>
+    <button onclick="checkAnswer(this,'d')">d) jamnik</button>
+
+    <p>4. moje marzenie na najblizsza przyszlosc</p>
+    <button onclick="checkAnswer(this,'a')">a) zamieszkac razem</button>
+    <button onclick="checkAnswer(this,'a')">b) kupic dzialke</button>
+    <button onclick="checkAnswer(this,'a')">c) poleciec samolotem</button>
+    <button onclick="checkAnswer(this,'a')">d) skok ze spadochronem</button>
+  </div>
+</div>
+
+<div class="section" id="section8">
+  <div class="title">dla kalpika</div>
+  <div class="message">
+  kabiuszku,<br><br>
+  dziekuje że jestes w moim zyciu.<br><br>
+  koooooooocham cie najbardziej na swiecie ❤️
+  </div>
+</div>
+
+<script>
+// HASŁO
+function unlock(){
+  let pw = document.getElementById('password').value;
+  if(pw==='kochamcie06'){
+    document.getElementById('lock').style.display='none';
+  } else { alert('Zle haslo'); }
+}
+
+// LICZNIK DNI
+let start=new Date('2023-12-06');
+function updateCounter(){
+  let now=new Date();
+  let diff=Math.floor((now-start)/(1000*60*60*24));
+  document.getElementById('counter').innerText=`${diff} dni`;
+}
+updateCounter();
+setInterval(updateCounter,1000*60*60*24);
+
+// QUIZ
+function checkAnswer(btn,correct){
+  if(btn.innerText[0]===correct){btn.classList.add('correct');}
+  else{btn.classList.add('wrong');}
+}
+
+// KUONY INTERAKTYWNE
+let coupons=document.querySelectorAll('.coupon');
+coupons.forEach(c=>{
+  c.addEventListener('click',()=>{
+    let usage=parseInt(c.dataset.usage);
+    if(usage>0 && usage!==999){ 
+      usage--; 
+      c.dataset.usage=usage;
+      c.querySelector('.count').innerText=`pozostalo: ${usage}`;
+    }
+  });
+});
+</script>
+</body>
+</html>

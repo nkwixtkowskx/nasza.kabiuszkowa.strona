@@ -1,1 +1,111 @@
-<!-- Content of 9index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Love Message Website</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff;
+            color: #333;
+        }
+        header {
+            text-align: center;
+            padding: 20px;
+        }
+        section {
+            margin: 20px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #fff;
+        }
+        .gallery img {
+            width: 100px;
+            height: auto;
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome to Our Love Story</h1>
+        <input type="password" id="password" placeholder="Enter the password">
+        <button onclick="checkPassword()">Unlock</button>
+    </header>
+    <section id="timeline">
+        <h2>Our Timeline</h2>
+        <ul>
+            <li>First met: 2015-06-01</li>
+            <li>Engaged: 2019-04-10</li>
+            <li>Getting Married: 2022-12-25</li>
+        </ul>
+    </section>
+    <section id="songs">
+        <h2>Our Favorite Songs</h2>
+        <ul>
+            <li><a href="https://spotify.com/song1">Song 1</a></li>
+            <li><a href="https://spotify.com/song2">Song 2</a></li>
+            <li><a href="https://spotify.com/song3">Song 3</a></li>
+        </ul>
+    </section>
+    <section id="reasons">
+        <h2>Reasons to Love You</h2>
+        <ul>
+            <li>Your kindness</li>
+            <li>Your intelligence</li>
+            <li>Your laughter</li>
+        </ul>
+    </section>
+    <section class="gallery">
+        <h2>Gallery</h2>
+        <div>
+            <img src="image1.jpg" alt="Image 1">
+            <img src="image2.jpg" alt="Image 2">
+            <img src="image3.jpg" alt="Image 3">
+            <img src="image4.jpg" alt="Image 4">
+            <img src="image5.jpg" alt="Image 5">
+            <img src="image6.jpg" alt="Image 6">
+            <img src="image7.jpg" alt="Image 7">
+            <img src="image8.jpg" alt="Image 8">
+            <img src="image9.jpg" alt="Image 9">
+            <img src="image10.jpg" alt="Image 10">
+            <img src="image11.jpg" alt="Image 11">
+            <img src="image12.jpg" alt="Image 12">
+            <img src="image13.jpg" alt="Image 13">
+        </div>
+    </section>
+    <section id="dreams">
+        <h2>Dreams List</h2>
+        <ul>
+            <li>Travel the world</li>
+            <li>Start a family</li>
+            <li>Build our dream home</li>
+        </ul>
+    </section>
+    <section id="coupons">
+        <h2>Love Coupons</h2>
+        <ul>
+            <li>Free date night</li>
+            <li>Movie night coupon</li>
+            <li>Weekend getaway</li>
+        </ul>
+    </section>
+    <section id="quiz">
+        <h2>Love Quiz</h2>
+        <p>How well do you know me? <a href="#">Take the quiz!</a></p>
+    </section>
+    <script>
+        function checkPassword() {
+            const password = document.getElementById('password').value;
+            if (password === 'yourpassword') {
+                alert('Unlocked!');
+                // Add functionality to show the rest of the content
+            } else {
+                alert('Incorrect password');
+            }
+        }
+    </script>
+</body>
+</html>
